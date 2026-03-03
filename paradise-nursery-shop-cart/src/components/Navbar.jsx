@@ -3,14 +3,25 @@ import { useSelector } from "react-redux";
 
 function Navbar() {
     const cartItems = useSelector(state => state.cart.items);
-    const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
+    // Dynamically calculate total quantity
+    const totalQuantity = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
 
     return (
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/cart">Cart ({totalQty})</Link>
+        <nav className="navbar">
+            <h2 className="logo">Paradise Nursery</h2>
+
+            <div className="nav-links">
+                <Link to="/">Home</Link>
+                <Link to="/products">Products</Link>
+                <Link to="/about">About</Link>
+                <Link to="/cart">
+                    Cart ({totalQuantity})
+                </Link>
+            </div>
         </nav>
     );
 }

@@ -1,11 +1,17 @@
 import { plants } from "../data/plants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../redux/CartSlice";
 
 function ProductList() {
     const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cart.items);
 
     const categories = [...new Set(plants.map(p => p.category))];
+
+    // Check if plant already exists in cart
+    const isInCart = (id) => {
+        return cartItems.some(item => item.id === id);
+    };
 
     return (
         <div className="products-container">
@@ -15,7 +21,7 @@ function ProductList() {
 
                     <div className="card-grid">
                         {plants
-                            .filter(p => p.category === category)
+                            .filter(plant => plant.category === category)
                             .map(plant => (
                                 <div key={plant.id} className="plant-card">
                                     <img src={plant.image} alt={plant.name} />
@@ -24,8 +30,9 @@ function ProductList() {
 
                                     <button
                                         onClick={() => dispatch(addItem(plant))}
+                                        disabled={isInCart(plant.id)}
                                     >
-                                        Add to Cart
+                                        {isInCart(plant.id) ? "Added" : "Add to Cart"}
                                     </button>
                                 </div>
                             ))}
