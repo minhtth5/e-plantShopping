@@ -1,29 +1,27 @@
-import { useDispatch } from "react-redux";
-import { increaseQty, decreaseQty, deleteItem } from "../redux/cartSlice";
+import { useSelector } from "react-redux";
+import CartItem from "../components/CartItem";
 
-function CartItem({ item }) {
-    const dispatch = useDispatch();
+function Cart() {
+    const items = useSelector(state => state.cart.items);
+
+    const calculateTotalAmount = () => {
+        return items.reduce(
+            (total, item) => total + item.price * item.quantity,
+            0
+        );
+    };
 
     return (
-        <div className="cart-item">
-            <img src={item.image} alt={item.name} />
+        <div className="cart-container">
+            <h2>Shopping Cart</h2>
 
-            <div>
-                <h4>{item.name}</h4>
-                <p>Unit Price: ${item.price}</p>
-                <p>Total: ${item.price * item.quantity}</p>
+            {items.map(item => (
+                <CartItem key={item.id} item={item} />
+            ))}
 
-                <div className="cart-controls">
-                    <button onClick={() => dispatch(increaseQty(item.id))}>+</button>
-                    {item.quantity}
-                    <button onClick={() => dispatch(decreaseQty(item.id))}>-</button>
-                    <button onClick={() => dispatch(deleteItem(item.id))}>
-                        Delete
-                    </button>
-                </div>
-            </div>
+            <h3>Total Amount: ${calculateTotalAmount()}</h3>
         </div>
     );
 }
 
-export default CartItem;
+export default Cart;

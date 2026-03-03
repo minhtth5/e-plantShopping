@@ -1,42 +1,266 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f9f4;
+}
+
+/* ================= LANDING BACKGROUND ================= */
+
+.background-image {
+  background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.landing-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #2e7d32;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.landing-content button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.landing-content button:hover {
+  background-color: #1b5e20;
 }
 
-.card {
-  padding: 2em;
+/* ================= NAVBAR ================= */
+
+nav {
+  background-color: #2e7d32;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
-.read-the-docs {
-  color: #888;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ================= LANDING PAGE ================= */
+
+.landing-container {
+  display: flex;
+  height: 90vh;
+}
+
+.landing-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8f5e9;
+  padding: 40px;
+  text-align: center;
+}
+
+.landing-text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.landing-text button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.landing-text button:hover {
+  background-color: #1b5e20;
+}
+
+.landing-image {
+  width: 50%;
+}
+
+.landing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-container {
+  padding: 40px;
+}
+
+.category-title {
+  margin: 30px 0 15px;
+  font-size: 24px;
+  color: #2e7d32;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.plant-card {
+  width: 250px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.plant-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.plant-card h4 {
+  margin: 10px 0;
+}
+
+.plant-card button {
+  padding: 8px 15px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.plant-card button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* ================= CART ================= */
+
+.cart-container {
+  padding: 40px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-controls button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-controls button:hover {
+  background-color: #1b5e20;
+}
+
+.total-section {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.cart-buttons button {
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-buttons button:hover {
+  background-color: #1b5e20;
+}
+
+/* ================= ABOUT PAGE ================= */
+
+.about-container {
+  padding: 40px;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #e8f5e9;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.about-section h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.about-section ul {
+  padding-left: 20px;
 }
