@@ -190,3 +190,36 @@ nav a:hover {
 .cart-buttons button:hover {
   background-color: #1b5e20;
 }
+
+/* ================= ABOUT PAGE ================= */
+
+.about-container {
+  padding: 40px;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #e8f5e9;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.about-section h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}

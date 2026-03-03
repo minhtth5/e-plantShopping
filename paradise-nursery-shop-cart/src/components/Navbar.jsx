@@ -7,8 +7,9 @@ function Navbar() {
 
     return (
         <nav>
-            <Link to="/">Home</Link> |
-            <Link to="/products">Products</Link> |
+            <Link to="/">Home</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/about">About Us</Link>
             <Link to="/cart">Cart ({totalQty})</Link>
         </nav>
     );

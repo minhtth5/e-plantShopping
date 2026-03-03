@@ -1,7 +1,7 @@
 import { plants } from "../data/plants";
 import PlantCard from "../components/PlantCard";
 
-function Products() {
+function ProductList() {
     const categories = [...new Set(plants.map(p => p.category))];
 
     return (
@@ -24,4 +24,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default ProductList;
